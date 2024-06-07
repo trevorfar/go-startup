@@ -1,0 +1,8 @@
+runtime: go122
+
+runtime_config: 
+  operating_system: "ubuntu22"
+
+handlers:
+- url: /api/.*
+  script: auto
