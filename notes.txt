@@ -1,3 +1,5 @@
 go run: Easy projects
     more optimal to use go build & go install ( binary )
 
+defer:  Stops the function from going through until the container function completes 
+

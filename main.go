@@ -69,7 +69,6 @@ func main() {
 
 	mongoURI := os.Getenv("MONGODB_URI")
 
-
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	opts := options.Client().ApplyURI(mongoURI).SetServerAPIOptions(serverAPI)
 
@@ -83,9 +82,10 @@ func main() {
 		}
 	}()
 
-	if err := client.Database("admin").RunCommand(context.TODO(), bson.D{{"ping", 1}}).Err(); err != nil {
+	if err := client.Database("admin").RunCommand(context.TODO(), bson.D{{Key: "ping", Value: 1}}).Err(); err != nil {
 		log.Fatal(err)
 	}
+	
 	fmt.Println("Pinged your deployment. You successfully connected to MongoDB!")
 
 	router := mux.NewRouter()
