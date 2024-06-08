@@ -1,0 +1,3 @@
+go run: Easy projects
+    more optimal to use go build & go install ( binary )
+
